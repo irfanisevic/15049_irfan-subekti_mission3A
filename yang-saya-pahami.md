@@ -22,4 +22,4 @@ penjabaran dari apa yang sudah saya kerjakan:
 4. spesifik untuk page index, saya mencampur inner css dan inline css, dikarenakan ini merupakan page yang paling rumit menurut saya. jadi saya melakukan test berulang yang mengakibatkan saya menambal dibagian-bagian yang random. mudah-mudahan kedepan nya saya dapat mengcoding dengan lebih rapih dan terstruktur.
 5. mohon diberikan bimbingan dan side notes apabila ada hal yang bisa saya lakukan dengan lebih baik. 
 
-atas waktu nya mengkoreksi tugas misson 3A saya, saya ucapkan terimakasih.
+atas waktu nya mengkoreksi tugas misson 3A saya, saya ucapkan terimakasih.ECHO is on.
