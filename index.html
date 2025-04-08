@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- google font cdn 'lato' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gidole&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!--boxicon cdn-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      * {
+        justify-content: center;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sub-title {
+        margin: 30px;
+      }
+
+      .container-beranda {
+        position: relative;
+        text-align: center;
+        border: 1px solid black;
+        background-image: url("./assets/setup-meja.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        color: white;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .container-beranda::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+      }
+
+      .container-beranda .content {
+        position: relative;
+        z-index: 2;
+        font-size: 1em;
+        font-weight: bold;
+        padding-top: 20px;
+      }
+
+      .video-course {
+        background-color: #adff2f;
+        color: #000;
+        padding: 12px 24px;
+        font-size: 1.2em;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .video-course:hover {
+        background-color: #9acd32;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .menu-item {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        position: relative;
+        padding: 10px 0;
+        transition: color 0.2s ease;
+      }
+
+      .menu-item:hover {
+        color: #ff6600;
+      }
+
+      .menu-item:first-child::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: orange;
+        transition: width 0.3s ease;
+      }
+
+      .menu-item:first-child:hover::after {
+        width: 100%;
+      }
+
+      .video-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      .video-item {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 12px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .thumbnail {
+        background-color: #333;
+        height: 160px;
+        border-radius: 8px;
+      }
+
+      .video-title {
+        font-size: 1.3em;
+        margin: 0.5rem 0 0;
+      }
+
+      .video-description {
+        font-size: 0.95em;
+        color: black;
+        margin-bottom: 0.5rem;
+      }
+
+      .tutor-info {
+        display: flex;
+        align-items: left;
+        gap: 0.6rem;
+      }
+
+      .tutor-photo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .tutor-details .tutor-name {
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .tutor-details .tutor-role {
+        font-size: 0.8em;
+        color: black;
+        margin: 0;
+      }
+
+      .bottom-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+      }
+
+      .stars {
+        font-size: 1.1em;
+        color: gold;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #00ff99;
+      }
+
+      /* newsletter part */
+
+      .newsletter {
+        background: #f8f8f8;
+        padding: 40px;
+        text-align: center;
+        font-family: sans-serif;
+        background-image: url(./assets/setup-meja.jpeg);
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        color: white;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .newsletter h3 {
+        text-transform: uppercase;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .newsletter h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      .newsletter p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .newsletter form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .newsletter input[type="email"] {
+        padding: 16px 20px;
+        font-size: 16px;
+        width: 100%;
+        border: 2px solid #ccc;
+        border-radius: 50px;
+        padding-right: 140px; /* space for button */
+      }
+
+      .newsletter button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        padding: 0 25px;
+        font-size: 16px;
+        background-color: #d2b48c; /* light brown */
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .newsletter button:hover {
+        background-color: #c49b6c;
+      }
+
+      @media (max-width: 500px) {
+        .newsletter form {
+          flex-direction: column;
+        }
+
+        .newsletter input[type="email"] {
+          padding-right: 20px;
+          border-radius: 10px;
+        }
+
+        .newsletter button {
+          position: static;
+          margin-top: 10px;
+          border-radius: 10px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./assets/atas-kanan.png" style="width: 100%; height: auto" />
+
+    <div class="container-beranda">
+      <div class="content">
+        <h1>
+          Revolusi Pembelajaran: Temukan <br />
+          ilmu Baru melalui Platform video <br />
+          Interaktif!
+        </h1>
+        <br />
+        <p>
+          temukan ilmu baru yang menarik dan mendalam melalui koleksi video
+          pembelajaran berkualitas tinggi. Tidak hanya itu, <br />
+          Anda juga dapat berpartisipasi dalam latihan interaktif yang akan
+          meningkatkan pemahaman Anda.
+        </p>
+        <br />
+        <button class="video-course">
+          Temukan Video Course untuk dipelajari
+        </button>
+      </div>
+    </div>
+
+    <div class="sub-title">
+      <h1>Koleksi Video Pembelajaran Unggulan</h1>
+      <p>Jelajahi dunia Pengetahuan dengan Pilihan kami!</p>
+    </div>
+
+    <!-- navbar part -->
+    <nav>
+      <ul>
+        <li><a href="#" class="menu-item">Pemasaran</a></li>
+        <li><a href="#" class="menu-item">Desain</a></li>
+        <li><a href="#" class="menu-item">Pengembangan Diri</a></li>
+        <li><a href="#" class="menu-item">Bisnis</a></li>
+      </ul>
+    </nav>
+    <!-- video 1 -->
+    <div class="video-container">
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/tea-cup.jpg"
+            style="object-fit: cover; width: 100%; height: 100%"
+          />
+        </div>
+        <h1 class="video-title">Belajar Digital Marketing</h1>
+        <p class="video-description">
+          Pelajari strategi pemasaran modern yang efektif.
+        </p>
+        <div class="tutor-info" style="text-align: left">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Randy Walele</p>
+            <p class="tutor-role">Senior Marketer, Tokopedia</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <div class="price">Rp120.000</div>
+        </div>
+      </div>
+      <!-- video 2 -->
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/laptop-lady.jpg"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <h1 class="video-title">Belajar Desain UI/UX</h1>
+        <p class="video-description">
+          Pelajari desain antarmuka yang menarik dan fungsional.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Raka Pratama</p>
+            <p class="tutor-role">Lead Designer, Bukalapak</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="price">Rp150.000</div>
+        </div>
+      </div>
+      <!-- video 3 -->
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/sofa.jpg"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <h1 class="video-title">Pengembangan Diri</h1>
+        <p class="video-description">
+          Tingkatkan soft skill dan kepercayaan diri Anda.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Andini Putri</p>
+            <p class="tutor-role">HRD Specialist, Gojek</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <div class="price">Rp100.000</div>
+        </div>
+      </div>
+    </div>
+    <!-- video 4 -->
+    <div class="video-container">
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/tea-cup.jpg"
+            style="object-fit: cover; width: 100%; height: 100%"
+          />
+        </div>
+        <h1 class="video-title">Belajar Digital Marketing</h1>
+        <p class="video-description">
+          Pelajari strategi pemasaran modern yang efektif.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Randy Walele</p>
+            <p class="tutor-role">Senior Marketer, Tokopedia</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <div class="price">Rp120.000</div>
+        </div>
+      </div>
+      <!-- video 5 -->
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/laptop-lady.jpg"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <h1 class="video-title">Belajar Desain UI/UX</h1>
+        <p class="video-description">
+          Pelajari desain antarmuka yang menarik dan fungsional.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Raka Pratama</p>
+            <p class="tutor-role">Lead Designer, Bukalapak</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="price">Rp150.000</div>
+        </div>
+      </div>
+      <!-- video 6 -->
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/sofa.jpg"
+            style="object-fit: cover; height: 100%; width: 100%"
+          />
+        </div>
+        <h1 class="video-title">Pengembangan Diri</h1>
+        <p class="video-description">
+          Tingkatkan soft skill dan kepercayaan diri Anda.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Andini Putri</p>
+            <p class="tutor-role">HRD Specialist, Gojek</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <div class="price">Rp100.000</div>
+        </div>
+      </div>
+    </div>
+    <!-- video 7 -->
+    <div class="video-container">
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/tea-cup.jpg"
+            style="object-fit: cover; width: 100%; height: 100%"
+          />
+        </div>
+        <h1 class="video-title">Belajar Digital Marketing</h1>
+        <p class="video-description">
+          Pelajari strategi pemasaran modern yang efektif.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Randy Walele</p>
+            <p class="tutor-role">Senior Marketer, Tokopedia</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <div class="price">Rp120.000</div>
+        </div>
+      </div>
+      <!-- video 8 -->
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/laptop-lady.jpg"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <h1 class="video-title">Belajar Desain UI/UX</h1>
+        <p class="video-description">
+          Pelajari desain antarmuka yang menarik dan fungsional.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Raka Pratama</p>
+            <p class="tutor-role">Lead Designer, Bukalapak</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="price">Rp150.000</div>
+        </div>
+      </div>
+      <!-- video 9 -->
+      <div class="video-item">
+        <div class="thumbnail">
+          <img
+            src="./assets/sofa.jpg"
+            style="object-fit: cover; height: 100%; width: 100%"
+          />
+        </div>
+        <h1 class="video-title">Pengembangan Diri</h1>
+        <p class="video-description">
+          Tingkatkan soft skill dan kepercayaan diri Anda.
+        </p>
+        <div class="tutor-info">
+          <i
+            class="bx bx-user-circle"
+            style="font-size: 50px; text-align: left"
+          ></i>
+          <div class="tutor-details">
+            <p class="tutor-name">Andini Putri</p>
+            <p class="tutor-role">HRD Specialist, Gojek</p>
+          </div>
+        </div>
+        <div class="bottom-row">
+          <div class="stars">⭐⭐⭐⭐☆</div>
+          <div class="price">Rp100.000</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <div class="content">
+        <h3 style="color: #fff">newsletter</h3>
+        <h1>Mau belajar lebih banyak?</h1>
+        <p style="color: #fff">
+          daftarkan diri mu untuk mendapatkan informasi terbaru dan <br />
+          penawaran spesial dari program-program terbaik hariesok.id
+        </p>
+
+        <form>
+          <input type="email" name="email" placeholder="masukan email anda" />
+          <button>subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <img
+      src="./assets/Footer.png"
+      alt="Footer Image"
+      style="width: 100%; height: auto"
+    />
+  </body>
+</html>

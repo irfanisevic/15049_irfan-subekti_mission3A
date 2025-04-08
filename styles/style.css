@@ -1,0 +1,182 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Open Sans", sans-serif;
+}
+
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.password-container{
+    position: relative;
+    width: 100%;
+}
+.toggle-password{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+.btn{
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: seagreen;
+    color: #fff;
+    border: 1px solid seagreen;
+}
+.google-btn i {
+    font-size: 20px; 
+    margin-right: 8px; 
+}
+.google-btn{
+    background-color: #db4437;
+    color: #fff;
+    border: none;
+}
+.forgot-password{
+    text-align: right;
+    width: 100%;
+    margin: 0;
+}
+
+/* phone container part */
+.phone-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Dropdown Button */
+.dropdown {
+    position: relative;
+    width: 30%;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Flag Icon */
+.flag-icon {
+    width: 20px;
+    height: auto;
+}
+
+/* Separator Line */
+.separator {
+    height: 20px;
+    width: 1px;
+    background-color: #ccc;
+    margin: 0 8px;
+}
+
+/* Country Code Text */
+.country-code-text {
+    flex: 1;
+}
+
+/* Arrow Icon */
+.arrow-down {
+    font-size: 12px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-item img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.dropdown-item:hover {
+    background: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Phone Number Input */
+.phone-container input {
+    width: 65%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* media query part */
+@media (max-width: 480px){
+    .container{
+        padding: 15px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    p{
+        font-size: 12px;
+    }
+    input{
+        padding: 10px;
+    }
+}

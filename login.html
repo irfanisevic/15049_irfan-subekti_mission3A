@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--boxicon cdn-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login page</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <img src="./assets/logo-videobelajar.png" alt="">
+    <div class="container">
+      <h1>Masuk ke Akun</h1>
+      <p>Yuk, lanjut belajar mu di videobelajar.</p>
+
+      <form>
+        <label for="email" name="email">E-Mail*</label>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="masukan email anda"
+          required
+        />
+        <br />
+        <br />
+        <label for="password" name="password">Kata Sandi*</label>
+        <div class="password-container">
+          <input
+            type="password"
+            name="password"
+            placeholder="masukan kata sandi"
+            required
+          />
+          <span class="toggle-password"><i class='bx bx-show-alt'></i></span>
+        </div>
+        <p class="forgot password">Lupa Password?</p>
+        <button class="btn">Masuk</button>
+
+        <button class="btn">Daftar</button>
+        <p>atau</p>
+        <button class="btn google-btn"><i class='bx bxl-google'></i>masuk dengan Google</button>
+      </form>
+    </div>
+  </body>
+</html>

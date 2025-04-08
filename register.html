@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--boxicon cdn-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <img src="./assets/logo-videobelajar.png" alt="" />
+    <div class="container">
+      <h1>Pendaftaran Akun</h1>
+      <p>yuk, daftarkan akun mu sekarang juga!</p>
+
+      <form>
+        <label for="nama" name="nama">Nama Lengkap*</label>
+        <input
+          type="nama"
+          name="nama"
+          placeholder="nama tulis nama anda"
+          required
+        />
+        <label for="email" name="email">E-mail*</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="masukan email anda"
+          required
+        />
+        <label for="number" name="phone-number">No Hp*</label>
+        <div class="phone-container">
+          <div class="dropdown">
+            <button class="dropdown-btn">
+              <img
+                src="https://flagcdn.com/w40/id.png"
+                class="flag-icon"
+                alt="ID Flag"
+              />
+              <span class="separator"></span>
+              <span class="country-code-text">+62</span>
+              <span class="arrow-down">▼</span>
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-item" data-code="+62">
+                <img src="https://flagcdn.com/w40/id.png" /> 🇮🇩 +62
+              </div>
+              <div class="dropdown-item" data-code="+1">
+                <img src="https://flagcdn.com/w40/us.png" /> 🇺🇸 +1
+              </div>
+              <div class="dropdown-item" data-code="+44">
+                <img src="https://flagcdn.com/w40/gb.png" /> 🇬🇧 +44
+              </div>
+            </div>
+          </div>
+          <input
+            type="tel"
+            name="phone-number"
+            placeholder="masukan no hp anda"
+            required
+          />
+        </div>
+        <label for="password" name="password">Kata Sandi*</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="masukan kata sandi"
+          required
+        />
+        
+        <label for="password" name="password">Konfirmasi Kata Sandi*</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="masukan ulang kata sandi"
+          required 
+        /><span class="toggle-password"><i class='bx bx-show-alt'></i></span>
+        
+        
+
+        <button class="btn">Masuk</button>
+
+        <button class="btn">Daftar</button>
+        <p>atau</p>
+        <button class="btn google-btn">
+          <i class="bx bxl-google"></i>sign-in dengan Google
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
